@@ -26,10 +26,10 @@ class Barrio(models.Model):
     opciones_parques = (
         (1,'Un Parque'),
         (2,'Dos Parques'),
-        (3,'Dos Parques'),
-        (4,'Dos Parques'),
-        (5,'Dos Parques'),
-        (6,'Dos Parques'),       
+        (3,'tres Parques'),
+        (4,'cuatro Parques'),
+        (5,'cinco Parques'),
+        (6,'seis Parques'),       
         )
 
     nombre = models.CharField(max_length=60) 

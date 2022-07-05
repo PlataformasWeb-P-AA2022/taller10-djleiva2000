@@ -1,13 +1,13 @@
+from django.shortcuts import render
+
+# Create your views here.
+
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import RequestContext
-from django.shortcuts import render
 
-# importar las clases de models.py
-from ordenamiento.models import *
-
-# importar los formularios de forms.py 
-from ordenamiento.forms import *
+from ordenamiento.models import Barrio, Parroquia
+from ordenamiento.forms import ParroquiaForm, BarrioForm, BarrioParroquiaForm
 
 
 def index(request):
@@ -15,8 +15,6 @@ def index(request):
     barrios = Barrio.objects.all()
     informacion_template = {'barrios':barrios,'parroquias': parroquias, 'numParroquias': len(parroquias),'numBarrios': len(barrios)}
     return render(request, 'index.html', informacion_template)
-
-# Parroquias
 
 def obtenerParroquia(request, id): 
     parroquias = Parroquia.objects.get(pk=id)  
